@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="gbk"/>
+<link rel="stylesheet" href="jquery.mobile-1.3.2.css">
+<script src="jquery-2.2.4.js"></script>
+<script src="jquery.mobile-1.3.2.js"></script>
+
+<script type="text/javascript">
+ 
+function playPause()
+{ 
+ 
+  $("video1").play(); 
+  
+} 
+
+ 
+</script> 
+
+</head>
+<body>
+
+<div data-role="page" id="pageone">
+  <div data-role="header">
+  <h1>欢迎访问我的主页</h1>
+  </div>
+
+  
+    <video id="video1"
+        src="http://192.168.0.111/hls/test2.m3u8"
+		height="300" width="400" 
+        style="margin-top:15px;"
+    > 
+     Your browser does not support HTML5 video.
+    </video>
+ 
+  
+ 
+  <button onclick="playPause()">播放/暂停</button> 
+  
+
+
+ 
+
+  <div data-role="footer">
+  <h1>页脚文本</h1>
+  </div>
+</div> 
+
+
+
+
+</body>
+</html>

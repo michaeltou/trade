@@ -1,0 +1,51 @@
+
+
+
+
+
+
+
+======================================================
+done:
+
+<zhibo>:  
+1. rtmp server  直播服务器
+2. ffmpg push to server ,  adobe client push to server.   (ffmpg点播推送到服务器， adobe推送到服务器)
+3. pc swplayer display,  pc html5 vedio,  wireless html5vedio,    wireless webview html5vedio.
+   (pc端 swplayer,  pc h5播放，  无线h5浏览器， 无线webview h5播放）
+
+ 
+=====================================================
+undone:
+
+1. iphone  get camera data , push to server  （iphone 获取视频数据，编码推送到服务器）
+   
+2. iphone app client display hls  （iphone客户端app播放hls视频）
+
+
+
+
+======================================================
+进行中
+<trade>:
+ 
+1. mysql database  (后台数据库)
+
+2. business logic in java, ibatis. （商业逻辑）
+
+3. trade ios client app  （交易ios客户端）
+
+
+
+
+
+
+
+直播界面交互：
+
+<!--iOS-->
+<video webkit-playsinline width="1" height="1" class="vplayinside notaplink" x-webkit-airplay controls loop="loop" src="<%=src%>"></video>
+ 
+<!--Android-->
+<video width="1" height="1" controls loop="loop" src="<%=src%>"></video>
+
