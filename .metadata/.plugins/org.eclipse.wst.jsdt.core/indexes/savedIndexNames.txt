@@ -1,0 +1,6 @@
+INDEX VERSION 1.122+/home/wangt/workspace/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+2347551885.index
+1615137344.index
+4278231611.index
+2030751450.index
+417777902.index
