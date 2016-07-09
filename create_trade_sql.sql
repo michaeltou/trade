@@ -68,5 +68,5 @@ CREATE TABLE `user` (
   `user_role` int(11) DEFAULT NULL,
   `gmt_create` datetime DEFAULT NULL,
   `gmt_modified` datetime DEFAULT NULL,
-  PRIMARY KEY (`userid`)
+  PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
