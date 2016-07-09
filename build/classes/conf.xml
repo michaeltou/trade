@@ -15,7 +15,7 @@
                  <property name="driver" value="com.mysql.jdbc.Driver" />
                  <property name="url" value="jdbc:mysql://localhost:3306/tzb" />
                  <property name="username" value="root" />
-                 <property name="password" value="root" />
+                 <property name="password" value="1qaz2wsx" />
              </dataSource>
          </environment>
      </environments>   
@@ -23,7 +23,12 @@
          <!-- 注册userMapper.xml文件， 
          userMapper.xml位于me.gacl.mapping这个包下，所以resource写成me/gacl/mapping/userMapper.xml-->
 		<mapper resource="com/trade/mapping/deptMapper.xml"/> 
+<<<<<<< HEAD
+		<mapper resource="com/trade/mapping/offerMapper.xml"/> 
+		<mapper resource="com/trade/mapping/userMapper.xml"/>
+=======
 		<mapper resource="com/trade/user/userMapper.xml"/>
+>>>>>>> ff7949700375f2963932853a556f9d913c1cafdc
 		
 	</mappers>
  </configuration>

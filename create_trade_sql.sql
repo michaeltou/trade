@@ -4,7 +4,7 @@ CREATE TABLE `inventory` (
   `gmt_create` datetime DEFAULT NULL,
   `gmt_modified` datetime DEFAULT NULL,
   PRIMARY KEY (`sku_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `offer` (
   `offer_id` bigint(20) NOT NULL,
@@ -21,7 +21,7 @@ CREATE TABLE `offer` (
   `gmt_create` datetime DEFAULT NULL,
   `gmt_modified` datetime DEFAULT NULL,
   PRIMARY KEY (`sku_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `tradeorder` (
   `order_id` bigint(20) NOT NULL,
@@ -38,7 +38,7 @@ CREATE TABLE `tradeorder` (
   `gmt_modified` datetime DEFAULT NULL,
   PRIMARY KEY (`order_id`),
   UNIQUE KEY `order_id` (`order_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `subtradeorder` (
   `suborder_id` bigint(20) NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE `subtradeorder` (
   `gmt_modified` datetime DEFAULT NULL,
   PRIMARY KEY (`suborder_id`),
   UNIQUE KEY `suborder_id` (`suborder_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `user` (
   `user_id` bigint(20) NOT NULL,
@@ -70,4 +70,4 @@ CREATE TABLE `user` (
   `gmt_create` datetime DEFAULT NULL,
   `gmt_modified` datetime DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
