@@ -8,6 +8,7 @@ CREATE TABLE `inventory` (
 
 CREATE TABLE `offer` (
   `offer_id` bigint(20) NOT NULL,
+  `offer_status` int(11) DEFAULT NULL,
   `sku_id` bigint(20) NOT NULL,
   `offer_name` varchar(4048) DEFAULT NULL,
   `offer_detail` longtext,
@@ -22,7 +23,7 @@ CREATE TABLE `offer` (
   PRIMARY KEY (`sku_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE `order` (
+CREATE TABLE `tradeorder` (
   `order_id` bigint(20) NOT NULL,
   `buyer_id` bigint(20) DEFAULT NULL,
   `seller_id` bigint(20) DEFAULT NULL,
@@ -39,7 +40,7 @@ CREATE TABLE `order` (
   UNIQUE KEY `order_id` (`order_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE `suborder` (
+CREATE TABLE `subtradeorder` (
   `suborder_id` bigint(20) NOT NULL,
   `order_id` bigint(20) NOT NULL,
   `buyer_id` bigint(20) DEFAULT NULL,
@@ -60,7 +61,7 @@ CREATE TABLE `suborder` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `user` (
-  `userid` bigint(20) NOT NULL,
+  `user_id` bigint(20) NOT NULL,
   `user_name` varchar(4048) DEFAULT NULL,
   `user_password` varchar(4048) DEFAULT NULL,
   `user_level` int(11) DEFAULT NULL,
@@ -68,5 +69,5 @@ CREATE TABLE `user` (
   `user_role` int(11) DEFAULT NULL,
   `gmt_create` datetime DEFAULT NULL,
   `gmt_modified` datetime DEFAULT NULL,
-  PRIMARY KEY (`userid`)
+  PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
