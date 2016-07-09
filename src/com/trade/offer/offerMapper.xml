@@ -14,7 +14,7 @@
          根据标题模糊查询得到一个offer对象
      -->
      <select id="getOfferByName" parameterType="string" resultType="com.trade.offer.Offer">
-         select * from offer where offer_name like #{offer_name} and status=0
+         select * from offer where offer_name like #{offer_name} and offer_status=0
      </select>
      <!-- 
          新增一个offer对象
