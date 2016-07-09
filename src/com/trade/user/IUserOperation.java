@@ -1,8 +1,7 @@
-package com.trade.operation;
+package com.trade.user;
 
 import java.util.List;
 
-import com.trade.user.User;
 
 public interface IUserOperation {
 	

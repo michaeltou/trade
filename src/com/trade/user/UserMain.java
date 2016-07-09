@@ -1,4 +1,4 @@
-package com.trade.conn;
+package com.trade.user;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,8 +13,6 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.trade.json.Json;
-import com.trade.operation.IUserOperation;
-import com.trade.user.User;
 
 public class UserMain {
 
@@ -66,7 +64,7 @@ public class UserMain {
     }
     public   static void selectUserList(IUserOperation userOperation){
     	
-    	   List<User> userList =  userOperation.selectUserList("%wangxin%");
+    	   List<User> userList =  userOperation.selectUserList("%wan%");
            JSONArray object = JSONArray.fromObject(userList);
             System.out.println(object.toString() ); 
             
@@ -86,7 +84,7 @@ public class UserMain {
         updateUser.setUserId("2");
         updateUser.setUserName("wangxin"); 
        userOperation.updateUser( updateUser);
-          System.out.println("update successfully");
+       System.out.println("update successfully");
     }
     
     public static  void deleteUser( IUserOperation userOperation){
