@@ -60,7 +60,7 @@ CREATE TABLE `suborder` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `user` (
-  `userid` bigint(20) NOT NULL,
+  `user_id` bigint(20) NOT NULL,
   `user_name` varchar(4048) DEFAULT NULL,
   `user_password` varchar(4048) DEFAULT NULL,
   `user_level` int(11) DEFAULT NULL,
