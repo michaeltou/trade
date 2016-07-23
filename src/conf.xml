@@ -25,6 +25,6 @@
 		<mapper resource="com/trade/mapping/deptMapper.xml"/> 
 		<mapper resource="com/trade/offer/offerMapper.xml"/> 
 		<mapper resource="com/trade/user/userMapper.xml"/>
-		
+		<mapper resource="com/trade/tradeOrder/tradeOrderMapper.xml"/>
 	</mappers>
  </configuration>
