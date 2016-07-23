@@ -71,3 +71,13 @@ CREATE TABLE `user` (
   `gmt_modified` datetime DEFAULT NULL,
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `message` (
+  `message_id` bigint(20) NOT NULL,
+  `room_id` bigint(20) DEFAULT NULL,
+  `sender_id` bigint(20) DEFAULT NULL,
+  `receiver_id` bigint(20) DEFAULT NULL,
+  `message` varchar(4048) DEFAULT NULL,
+  `status` bigint(11) DEFAULT NULL,
+  `gmt_create` datetime DEFAULT NULL,
+  PRIMARY KEY (`message_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
