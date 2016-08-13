@@ -2,7 +2,7 @@ target/
 build/
 .classpath
 .DS_Store
-.git
-.externalToolBuilders
+.git/
+.externalToolBuilders/
 .project
-.settings
+.settings/
