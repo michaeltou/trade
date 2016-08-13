@@ -68,6 +68,21 @@ public class OfferUtil {
     	
 		return offerList;
     }
+    public List<Offer> getOfferByRoomid(int roomid) {
+    	SqlSession session = mSessionFactory.openSession();
+    	List<Offer> offerList;
+    	try {
+    		IOfferOperation oCInterface = session.getMapper(IOfferOperation.class);
+    		offerList = oCInterface.getOfferByRoomid(roomid);
+    		if(offerList != null) {
+    			System.out.println("根据直播房间号查offer：" + offerList);
+    		}
+    	} finally {
+    		session.close();
+    	}
+    	
+		return offerList;
+    }
     public Offer addOffer(Offer offer) {
     	SqlSession session = mSessionFactory.openSession();
     	try {

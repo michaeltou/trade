@@ -1,6 +1,7 @@
---修改数据库的编码形式
---mysql>user mydb;
---mysql>alter database mydb  character set utf8;
+drop database tzb;
+create database tzb;
+use tzb;
+alter database tzb character set utf8;
 
 CREATE TABLE `chatmessage` (
   `message_id` bigint(20) NOT NULL COMMENT '消息ID',
@@ -68,8 +69,7 @@ CREATE TABLE `subtradeorder` (
   `suborder_refund_id` bigint(20) DEFAULT NULL COMMENT '子订单退款ID',
   `gmt_create` datetime DEFAULT NULL COMMENT '创建时间',
   `gmt_modified` datetime DEFAULT NULL COMMENT '修改时间',
-  PRIMARY KEY (`suborder_id`),
-  UNIQUE KEY `suborder_id` (`suborder_id`)
+  PRIMARY KEY (`suborder_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='子订单表';
 
 CREATE TABLE `tradeorder` (
@@ -85,21 +85,20 @@ CREATE TABLE `tradeorder` (
   `order_refund_id` bigint(20) DEFAULT NULL COMMENT '退款ID',
   `gmt_create` datetime DEFAULT NULL COMMENT '创建时间',
   `gmt_modified` datetime DEFAULT NULL COMMENT '修改时间',
-  PRIMARY KEY (`order_id`),
-  UNIQUE KEY `order_id` (`order_id`)
+  PRIMARY KEY (`order_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='主订单表';
 
 CREATE TABLE `user` (
-  `user_id` bigint(20) NOT NULL,
-  `user_name` varchar(4048) DEFAULT NULL,
-  `user_password` varchar(4048) DEFAULT NULL,
-  `user_level` int(11) DEFAULT NULL,
-  `user_tag` varchar(4048) DEFAULT NULL,
-  `user_role` int(11) DEFAULT NULL,
-  `gmt_create` datetime DEFAULT NULL,
-  `gmt_modified` datetime DEFAULT NULL,
+  `user_id` bigint(20) NOT NULL COMMENT '用户ID',
+  `user_name` varchar(4048) DEFAULT NULL COMMENT '用户姓名',
+  `user_password` varchar(4048) DEFAULT NULL COMMENT '用户密码',
+  `user_level` int(11) DEFAULT NULL COMMENT '用户层级',
+  `user_tag` varchar(4048) DEFAULT NULL COMMENT '用户标签',
+  `user_role` int(11) DEFAULT NULL COMMENT '用户角色',
+  `gmt_create` datetime DEFAULT NULL COMMENT '注册时间',
+  `gmt_modified` datetime DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户表';
 
 
 CREATE TABLE `liveroomoffer` (
@@ -111,19 +110,12 @@ CREATE TABLE `liveroomoffer` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=2340 COMMENT='直播房间商品关系表';
 
----插入数据
-
-/* Data for the `user` table  (Records 1 - 3) */
 
 INSERT INTO `user` (`user_id`, `user_name`, `user_password`, `user_level`, `user_tag`, `user_role`, `gmt_create`, `gmt_modified`) VALUES 
   (1, '张三', '123456', 1, '白名单', 1, '2016-07-06 16:00:00', '2016-07-07 16:00:00'),
   (2, '李四', '123456', 2, '白名单', 2, '2016-08-06 16:10:10', '2016-08-06 16:16:21'),
   (3, '王五', '123456', 3, '白名单', 3, '2016-08-06', '2016-08-06 01:01:01');
 
-
-
-
-/* Data for the `liveroomoffer` table  (Records 1 - 14) */
 
 INSERT INTO `liveroomoffer` (`room_id`, `offer_id`, `status`, `gmt_create`, `id`) VALUES 
   (1, 1, 1, '2016-08-01 01:01:00', 1),

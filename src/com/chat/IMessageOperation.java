@@ -9,6 +9,8 @@ public interface IMessageOperation {
 	
 	public List<Message> getMessageByGmt_create(String gmt_create);
 	
+	public List<Message> getMessageTop(int size);
+	
 	public void addMessage(Message message);
 	
 	public void delMessage(Message message);

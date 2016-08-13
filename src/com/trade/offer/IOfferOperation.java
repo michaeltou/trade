@@ -6,6 +6,8 @@ public interface IOfferOperation {
 	public Offer getOfferById(int id);
 	
 	public List<Offer> getOfferByName(String name);
+
+	public List<Offer> getOfferByRoomid(int roomid);	
 	
 	public void addOffer(Offer offer);
 	

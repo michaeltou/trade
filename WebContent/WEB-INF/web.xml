@@ -19,4 +19,24 @@
     <servlet-name>Test2</servlet-name>
     <url-pattern>/Test2</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LiveRoomManager</display-name>
+    <servlet-name>LiveRoomManager</servlet-name>
+    <servlet-class>com.trade.app.servlet.LiveRoomManager</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LiveRoomManager</servlet-name>
+    <url-pattern>/liveroomlist</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>OfferListManager</display-name>
+    <servlet-name>OfferListManager</servlet-name>
+    <servlet-class>com.trade.app.servlet.OfferListManager</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OfferListManager</servlet-name>
+    <url-pattern>/liveroomofferlist</url-pattern>
+  </servlet-mapping>
 </web-app>

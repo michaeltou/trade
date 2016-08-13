@@ -80,6 +80,21 @@ public class MessageUtil {
     	
 		return messageList;
     }
+    public List<Message> getMessageTop(int size) {
+    	SqlSession session = mSessionFactory.openSession();
+    	List<Message> messageList;
+    	try {
+    		IMessageOperation oMInterface = session.getMapper(IMessageOperation.class);
+    		messageList = oMInterface.getMessageTop(size);
+    		if(messageList != null) {
+    			System.out.println("根据name查message：" + messageList);
+    		}
+    	} finally {
+    		session.close();
+    	}
+    	
+		return messageList;
+    }
     public Message addMessage(Message message) {
     	SqlSession session = mSessionFactory.openSession();
     	try {

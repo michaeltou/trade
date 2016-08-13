@@ -17,6 +17,14 @@
          select * from offer where offer_name like #{offer_name} and offer_status=0
      </select>
      <!-- 
+         根据房间号拿到所有商品list
+     -->
+     <select id="getOfferByRoomid" parameterType="int" resultType="com.trade.offer.Offer">
+         select t1.* from liveroomoffer t1, offer t2 
+         where t1.offer_id=t2.offer_id and t1.room_id = #{roomid} and t2.offer_id is not NULL
+         	and t1.status=1
+     </select>
+     <!-- 
          新增一个offer对象
      -->
      <insert id="addOffer" parameterType="com.trade.offer.Offer" useGeneratedKeys="true" keyProperty="id">
