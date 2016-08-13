@@ -27,5 +27,6 @@
 		<mapper resource="com/trade/user/userMapper.xml"/>
 		<mapper resource="com/trade/tradeOrder/tradeOrderMapper.xml"/>
 		<mapper resource="com/chat/messageMapper.xml"/> 
+		<mapper resource="com/trade/liveroom/liveRoomMapper.xml"/>
 	</mappers>
  </configuration>
