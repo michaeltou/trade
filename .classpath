@@ -8,16 +8,15 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="/home/wong/lib/mybatis-3.1.1.jar"/>
-	<classpathentry kind="lib" path="/home/wong/lib/mysql-connector-java-5.1.39-bin.jar"/>
-	<classpathentry kind="lib" path="/home/wong/lib/lib (2)/commons-beanutils.jar"/>
-	<classpathentry kind="lib" path="/home/wong/lib/lib (2)/commons-beanutils-1.9.2.jar"/>
-	<classpathentry kind="lib" path="/home/wong/lib/lib (2)/commons-collections-3.2.2.jar"/>
-	<classpathentry kind="lib" path="/home/wong/lib/lib (2)/commons-lang-2.5.jar"/>
-	<classpathentry kind="lib" path="/home/wong/lib/lib (2)/commons-logging-1.2.jar"/>
-	<classpathentry kind="lib" path="/home/wong/lib/lib (2)/ezmorph-1.0.6.jar"/>
-	<classpathentry kind="lib" path="/home/wong/lib/lib (2)/json-lib-2.4-jdk15.jar"/>
-	<classpathentry kind="lib" path="/home/wong/lib/lib/json-lib-2.4-jdk15.jar"/>
-	<classpathentry kind="lib" path="/home/wong/servlet-api.jar"/>
+	<classpathentry kind="lib" path="/home/wangt/lib/mybatis-3.1.1.jar"/>
+	<classpathentry kind="lib" path="/home/wangt/lib/mysql-connector-java-5.1.39-bin.jar"/>
+	<classpathentry kind="lib" path="/home/wangt/lib/lib/commons-beanutils.jar"/>
+	<classpathentry kind="lib" path="/home/wangt/lib/lib/commons-beanutils-1.9.2.jar"/>
+	<classpathentry kind="lib" path="/home/wangt/lib/lib/commons-collections-3.2.2.jar"/>
+	<classpathentry kind="lib" path="/home/wangt/lib/lib/commons-lang-2.5.jar"/>
+	<classpathentry kind="lib" path="/home/wangt/lib/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="/home/wangt/lib/lib/ezmorph-1.0.6.jar"/>
+	<classpathentry kind="lib" path="/home/wangt/lib/lib/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="/home/wangt/lib/lib/servlet-api.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
