@@ -1,7 +1,7 @@
 package com.trade.offer;
 
 public class Offer {
-	private int offer_id;
+	private long offer_id;
 	private int sku_id;
 	private String offer_name;
 	private String offer_detail;
@@ -37,7 +37,7 @@ public class Offer {
 	public long getOffer_id() {
 		return offer_id;
 	}
-	public void setOffer_id(int offer_id) {
+	public void setOffer_id(long offer_id) {
 		this.offer_id = offer_id;
 	}
 	public int getOffer_pro_price() {
@@ -96,7 +96,7 @@ public class Offer {
 	}
 	
 	public String toString() {
-		String ret = "offer_id=" + Integer.toString(offer_id) + "\toffer_name=" + offer_name;
+		String ret = "offer_id=" + Long.toString(offer_id) + "\toffer_name=" + offer_name;
 		return  ret;
 	}
 

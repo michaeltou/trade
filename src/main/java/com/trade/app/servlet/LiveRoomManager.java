@@ -11,27 +11,23 @@ import javax.servlet.http.HttpServletResponse;
 import net.sf.json.JSONObject;
 
 import com.chat.Message;
-import com.chat.MessageUtil;
+import com.trade.infrastructure.chatMessage.MessageOperator;
 
 /**
  * Servlet implementation class LiveRoomManager
  */
 public class LiveRoomManager extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private MessageUtil mUtil;
+	
+	private static final MessageOperator messaeOperator = new MessageOperator();
+	
 
     /**
      * Default constructor. 
      */
     public LiveRoomManager() {
         // TODO Auto-generated constructor stub
-    	mUtil = new MessageUtil();
-		try {
-			mUtil.init("conf.xml");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+    	
     }
 
 	/**
@@ -54,7 +50,7 @@ public class LiveRoomManager extends HttpServlet {
 		try {
 			String sizeStr = request.getParameter("size");
 			int size = Integer.parseInt(sizeStr);
-			List<Message> messageList = mUtil.getMessageTop(size);
+			List<Message> messageList = messaeOperator.getMessageTop(size);
 			ResultModel<List<Message>> rm = new ResultModel<List<Message>>();
 			rm.setModel(messageList);
 			rm.setSuccess(true);

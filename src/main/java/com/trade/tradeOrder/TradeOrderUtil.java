@@ -2,16 +2,11 @@ package com.trade.tradeOrder;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.Reader;
 import java.util.List;
 
-import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-
-import com.trade.offer.Offer;
-import com.trade.offer.OfferUtil;
 
 public class TradeOrderUtil {
 
@@ -22,7 +17,7 @@ public class TradeOrderUtil {
         //mybatis的配置文件
     	if(resource == null || resource.isEmpty()) resource = "conf.xml";
         //使用类加载器加载mybatis的配置文件（它也加载关联的映射文件）
-        InputStream is = OfferUtil.class.getClassLoader().getResourceAsStream(resource);
+        InputStream is = TradeOrderUtil.class.getClassLoader().getResourceAsStream(resource);
         //构建sqlSession的工厂
         wSessionFactory = new SqlSessionFactoryBuilder().build(is);
         //使用MyBatis提供的Resources类加载mybatis的配置文件（它也加载关联的映射文件）

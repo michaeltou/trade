@@ -22,11 +22,12 @@
      <mappers>
          <!-- 注册userMapper.xml文件，
          userMapper.xml位于me.gacl.mapping这个包下，所以resource写成me/gacl/mapping/userMapper.xml-->
-		<mapper resource="com/trade/mapping/deptMapper.xml"/> 
-		<mapper resource="com/trade/offer/offerMapper.xml"/> 
-		<mapper resource="com/trade/user/userMapper.xml"/>
-		<mapper resource="com/trade/tradeOrder/tradeOrderMapper.xml"/>
-		<mapper resource="com/chat/messageMapper.xml"/> 
-		<mapper resource="com/trade/liveroom/liveRoomMapper.xml"/>
+		<mapper resource="deptMapper.xml"/> 
+		<mapper resource="offerMapper.xml"/> 
+		<mapper resource="userMapper.xml"/>
+		<mapper resource="tradeOrderMapper.xml"/>
+		<mapper resource="messageMapper.xml"/> 
+		<mapper resource="liveRoomOfferMapper.xml"/>
+		<mapper resource="userAddressMapper.xml"/>
 	</mappers>
  </configuration>

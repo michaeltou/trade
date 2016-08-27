@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 为这个mapper指定一个唯一的namespace，namespace的值习惯上设置成包名+sql映射文件名，这样就能够保证namespace的值是唯一的
+例如namespace="me.gacl.mapping.userMapper"就是me.gacl.mapping(包名)+userMapper(userMapper.xml文件去除后缀)
+-->
+<mapper namespace="com.chat.IMessageOperation">
+     <!-- 
+         根据id查询得到一个message对象
+     -->
+     <select id="getMessageById" parameterType="int" resultType="com.chat.Message">
+         select * from chatmessage where message_id=#{message_id}
+     </select>
+     <!-- 
+         根据标题模糊查询得到一个message对象
+     -->
+     <select id="getMessageByName" parameterType="string" resultType="com.chat.Message">
+         select * from chatmessage where message like #{message} and status=0
+     </select>
+     <!-- 
+         根据日期查询得到一个message对象
+     -->
+     <select id="getMessageByGmt_create" parameterType="string" resultType="com.chat.Message">
+         select * from chatmessage where message gmt_create=#{gmt_create}
+     </select>
+     <!-- 
+         获取最新大top message
+     -->
+     <select id="getMessageTop" parameterType="int" resultType="com.chat.Message">
+         select * from chatmessage order by gmt_create desc limit #{size}
+     </select>
+     <!-- 
+         新增一个message对象
+     -->
+     <insert id="addMessage" parameterType="com.chat.Message" useGeneratedKeys="true" keyProperty="id">
+         insert into message(message_id,room_id,sender_id,receiver_id,message,status,gmt_create)
+         values(#{message_id},#{room_id},#{sender_id},#{receiver_id},#{message},#{status},#{gmt_create})
+     </insert>
+     <!-- 
+         下架一个message对象
+     -->
+     <update id="delMessage" parameterType="com.chat.Message">
+         update message set status=1 where message_id=#{message_id}
+     </update>
+ </mapper>

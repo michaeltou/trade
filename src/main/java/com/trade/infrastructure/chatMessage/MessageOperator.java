@@ -1,39 +1,16 @@
-package com.chat;
+package com.trade.infrastructure.chatMessage;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-public class MessageUtil {
-	
-	private SqlSessionFactory mSessionFactory;
+import com.chat.IMessageOperation;
+import com.chat.Message;
+import com.trade.infrastructure.MyBatisOperator;
 
-	//String resource = "conf.xml";
-    public void init(String resource) throws IOException {
-        //mybatis的配置文件
-    	if(resource == null || resource.isEmpty()) resource = "conf.xml";
-        //使用类加载器加载mybatis的配置文件（它也加载关联的映射文件）
-        InputStream is = MessageUtil.class.getClassLoader().getResourceAsStream(resource);
-        //构建sqlSession的工厂
-        mSessionFactory = new SqlSessionFactoryBuilder().build(is);
-        //使用MyBatis提供的Resources类加载mybatis的配置文件（它也加载关联的映射文件）
-        //Reader reader = Resources.getResourceAsReader(resource); 
-        //构建sqlSession的工厂
-        //SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(reader);
-        //创建能执行映射文件中sql的sqlSession
-        //mSession = mSessionFactory.openSession();
-        /**
-         * 映射sql的标识字符串，
-         * me.gacl.mapping.userMapper是userMapper.xml文件中mapper标签的namespace属性的值，
-         * getUser是select标签的id属性值，通过select标签的id属性值就可以找到要执行的SQL
-         */
-    }
-    
-    public Message getMessageById(int id) {
+public class MessageOperator extends MyBatisOperator{
+
+	public Message getMessageById(int id) {
     	SqlSession session = mSessionFactory.openSession();
     	Message message;
     	try {
@@ -50,6 +27,7 @@ public class MessageUtil {
     	
 		return message;
     }
+    
     public List<Message> getMessageByName(String name) {
     	SqlSession session = mSessionFactory.openSession();
     	List<Message> messageList;
@@ -116,28 +94,6 @@ public class MessageUtil {
     		System.out.println("删除message：" + message);
     	} finally {
     		session.close();
-    	}
-    }
-    
-    public static void main(String[] args) {
-    	try {
-    		MessageUtil util = new MessageUtil();
-    		util.init("conf.xml");
-    		Message message = new Message();
-    		message.setMessage_id(1);
-    		message.setRoom_id(0);
-    		message.setSender_id(2);
-    		message.setReceiver_id(5);
-    		message.setMessage("hello world!");
-    		message.setStatus(0);
-    		message.setGmt_create("2016-07-15 00:00:00");
-    		//util.addMessage(message);
-    		util.getMessageById(1);
-    		//util.getMessageByName("%abc%");
-    		//util.delMessage(message);
-    	} catch(Exception e) {
-    		//System.out.println(e.getStackTrace());
-    		e.printStackTrace();
     	}
     }
 }

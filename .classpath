@@ -1,23 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
-		<attributes>
-			<attribute name="owner.project.facets" value="java"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="/home/wong/lib/mybatis-3.1.1.jar"/>
-	<classpathentry kind="lib" path="/home/wong/lib/mysql-connector-java-5.1.39-bin.jar"/>
-	<classpathentry kind="lib" path="/home/wong/lib/lib (2)/commons-beanutils.jar"/>
-	<classpathentry kind="lib" path="/home/wong/lib/lib (2)/commons-beanutils-1.9.2.jar"/>
-	<classpathentry kind="lib" path="/home/wong/lib/lib (2)/commons-collections-3.2.2.jar"/>
-	<classpathentry kind="lib" path="/home/wong/lib/lib (2)/commons-lang-2.5.jar"/>
-	<classpathentry kind="lib" path="/home/wong/lib/lib (2)/commons-logging-1.2.jar"/>
-	<classpathentry kind="lib" path="/home/wong/lib/lib (2)/ezmorph-1.0.6.jar"/>
-	<classpathentry kind="lib" path="/home/wong/lib/lib (2)/json-lib-2.4-jdk15.jar"/>
-	<classpathentry kind="lib" path="/home/wong/lib/lib/json-lib-2.4-jdk15.jar"/>
-	<classpathentry kind="lib" path="/home/wong/servlet-api.jar"/>
-	<classpathentry kind="output" path="build/classes"/>
+  <classpathentry kind="src" path="src/main/java" including="**/*.java"/>
+  <classpathentry kind="output" path="target/classes"/>
+  <classpathentry kind="var" path="M2_REPO/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar"/>
+  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+  <classpathentry kind="var" path="M2_REPO/org/mybatis/mybatis/3.1.1/mybatis-3.1.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/commons-beanutils/commons-beanutils/1.9.2/commons-beanutils-1.9.2.jar"/>
+  <classpathentry kind="var" path="M2_REPO/commons-logging/commons-logging/1.2/commons-logging-1.2.jar"/>
+  <classpathentry kind="var" path="M2_REPO/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar"/>
+  <classpathentry kind="var" path="M2_REPO/mysql/mysql-connector-java/5.1.39/mysql-connector-java-5.1.39.jar"/>
+  <classpathentry kind="var" path="M2_REPO/commons-lang/commons-lang/2.5/commons-lang-2.5.jar"/>
+  <classpathentry kind="var" path="M2_REPO/net/sf/ezmorph/ezmorph/1.0.6/ezmorph-1.0.6.jar" sourcepath="M2_REPO/net/sf/ezmorph/ezmorph/1.0.6/ezmorph-1.0.6-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/net/sf/json-lib/json-lib/2.4/json-lib-2.4.jar"/>
 </classpath>

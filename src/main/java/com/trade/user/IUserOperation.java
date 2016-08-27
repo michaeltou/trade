@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface IUserOperation {
 	
-	public User selectUserByID(int userId);
+	public User selectUserByID(long userId);
 	
 	public List<User> selectUserList(String userName);
 	
@@ -13,6 +13,6 @@ public interface IUserOperation {
 	
 	public int updateUser(User user);
 	
-	public int deleteUser(int userId);
+	public int deleteUser(long userId);
 
 }

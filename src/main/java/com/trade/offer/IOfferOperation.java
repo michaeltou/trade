@@ -3,7 +3,7 @@ package com.trade.offer;
 import java.util.List;
 
 public interface IOfferOperation {
-	public Offer getOfferById(int id);
+	public Offer getOfferById(long id);
 	
 	public List<Offer> getOfferByName(String name);
 
@@ -14,5 +14,12 @@ public interface IOfferOperation {
 	public void updateOffer(Offer offer);
 	
 	public void delOffer(Offer offer);
+	
+	
+	public void addOfferPicture(OfferPicture offerPicture);
+	
+	List<OfferPicture> selectByOfferIdAndPictype(OfferPicture offerPicture);
+	
+	void deleteOfferPictureByOfferId(long offerId);
 	
 }
