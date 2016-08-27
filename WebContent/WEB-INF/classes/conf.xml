@@ -29,5 +29,6 @@
 		<mapper resource="messageMapper.xml"/> 
 		<mapper resource="liveRoomOfferMapper.xml"/>
 		<mapper resource="userAddressMapper.xml"/>
+		<mapper resource="liveRoomMapper.xml"/>
 	</mappers>
  </configuration>

@@ -5,11 +5,17 @@ import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import net.sf.json.JSONObject;
 
 public class ServletOutUtil {
+	
+	private static final Log log =LogFactory.getLog(ServletOutUtil.class);
 
 	public static void output(HttpServletResponse response, String out) throws IOException {
+		response.setCharacterEncoding("UTF-8");
 		PrintWriter pw = response.getWriter();
 		pw.println(out);
 		pw.flush();

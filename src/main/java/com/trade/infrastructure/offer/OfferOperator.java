@@ -2,17 +2,21 @@ package com.trade.infrastructure.offer;
 
 import java.util.List;
 
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 import org.apache.ibatis.session.SqlSession;
 
 import com.trade.infrastructure.MyBatisOperator;
+import com.trade.infrastructure.flie.PictureFilePathReader;
 import com.trade.offer.IOfferOperation;
 import com.trade.offer.Offer;
 import com.trade.offer.OfferDTO;
 import com.trade.offer.OfferPicture;
 
 public class OfferOperator extends MyBatisOperator{
+	
+	private static final String abstractPath=PictureFilePathReader.getPicConfigPath();
 
 	 public Offer getOfferById(long id) {
 	    	SqlSession session = mSessionFactory.openSession();
@@ -57,7 +61,7 @@ public class OfferOperator extends MyBatisOperator{
 	    		IOfferOperation oCInterface = session.getMapper(IOfferOperation.class);
 	    		offerList = oCInterface.getOfferByRoomid(roomid);
 	    		if(offerList != null) {
-	    			System.out.println("根据直播房间号查offer：" + offerList);
+	    			log.info("根据直播房间号查offer：" + offerList);
 	    		}
 	    	} catch(Exception e){
 	    		log.error("getOfferByRoomid failed,args:"+roomid,e);
@@ -105,7 +109,7 @@ public class OfferOperator extends MyBatisOperator{
 	        	  }
 	        	  session.commit();
 	          }catch(Exception e){
-	        	  log.error("addOfferPicture faileds,args:"+JSONObject.fromObject(offerPictureList).toString(),e);       	 
+	        	  log.error("addOfferPicture faileds,args:"+JSONArray.fromObject(offerPictureList).toString(),e);       	 
 	          }
 	          finally {
 	      		session.close();
@@ -123,7 +127,13 @@ public class OfferOperator extends MyBatisOperator{
 	     	  offerPicture.setOffer_id(offer_id);
 	     	  offerPicture.setPic_type(pic_type);
 	     	  offerPictureList = oCInterface.selectByOfferIdAndPictype(offerPicture);
-	     	  System.out.println("查询商品图片list：" + offerPictureList);
+	     	  if(null != offerPictureList &&  !offerPictureList.isEmpty()){
+	     		  for(OfferPicture offerPic:offerPictureList){
+	     			  String fullPath =abstractPath+offerPic.getPic_url();
+	     			  offerPic.setPic_url(fullPath);
+	     		  }
+	     	  }
+	     	  log.info("查询商品图片list：" + JSONArray.fromObject(offerPictureList).toString());
 	       }catch(Exception e){
 	    	   log.error("getOfferPictureByOfferId failed,offer_id:"+offer_id+";pic_type:"+pic_type,e);       	 
 	       }
