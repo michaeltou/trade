@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+<<<<<<< HEAD
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="/home/wangt/lib/mybatis-3.1.1.jar"/>
+	<classpathentry kind="lib" path="/home/wangt/lib/mysql-connector-java-5.1.39-bin.jar"/>
+	<classpathentry kind="lib" path="/home/wangt/lib/lib/commons-beanutils.jar"/>
+	<classpathentry kind="lib" path="/home/wangt/lib/lib/commons-beanutils-1.9.2.jar"/>
+	<classpathentry kind="lib" path="/home/wangt/lib/lib/commons-collections-3.2.2.jar"/>
+	<classpathentry kind="lib" path="/home/wangt/lib/lib/commons-lang-2.5.jar"/>
+	<classpathentry kind="lib" path="/home/wangt/lib/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="/home/wangt/lib/lib/ezmorph-1.0.6.jar"/>
+	<classpathentry kind="lib" path="/home/wangt/lib/lib/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="/home/wangt/lib/lib/servlet-api.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>
+=======
   <classpathentry kind="src" path="src/main/java" including="**/*.java"/>
   <classpathentry kind="output" path="target/classes"/>
   <classpathentry kind="var" path="M2_REPO/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar"/>
@@ -13,3 +35,4 @@
   <classpathentry kind="var" path="M2_REPO/net/sf/ezmorph/ezmorph/1.0.6/ezmorph-1.0.6.jar" sourcepath="M2_REPO/net/sf/ezmorph/ezmorph/1.0.6/ezmorph-1.0.6-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/net/sf/json-lib/json-lib/2.4/json-lib-2.4.jar"/>
 </classpath>
+>>>>>>> fd2a99cef8c65849e2812b03a1a82ac7b1c73136
