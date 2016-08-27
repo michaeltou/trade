@@ -53,12 +53,12 @@ public class LiveRoomUtil {
     	
 		return liveRoom;
     }
-    public List<LiveRoom> getLiveRoomByOnLineUsersCount(int onLineUsersCount) {
+    public List<LiveRoom> getTopLiveRoomList(int count) {
     	SqlSession session = mSessionFactory.openSession();
     	List<LiveRoom> liveRoomList;
     	try {
     		ILiveRoomOperation oCInterface = session.getMapper(ILiveRoomOperation.class);
-    		liveRoomList = oCInterface.getLiveRoomByOnLineUsersCount(onLineUsersCount);
+    		liveRoomList = oCInterface.getTopLiveRoomList(count);
     		if(liveRoomList != null) {
     			System.out.println("根据onLineUsersCount查LiveRoom：" + liveRoomList);
     		}

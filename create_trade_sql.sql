@@ -1,7 +1,7 @@
 drop database tzb;
 create database tzb;
 use tzb;
-alter database tzb character set utf8;
+alter database tzb  character set utf8;
 
 CREATE TABLE `chatmessage` (
   `message_id` bigint(20) NOT NULL COMMENT '消息ID',
@@ -33,6 +33,7 @@ CREATE TABLE `liveroom` (
   `title` varchar(200) DEFAULT NULL COMMENT '标题',
   `cover` varchar(200) DEFAULT NULL COMMENT '封面',
   `gmt_create` datetime DEFAULT NULL COMMENT '创建时间',
+  `flow_status` int(11) DEFAULT NULL COMMENT '房间状态',
   PRIMARY KEY (`room_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='直播房间表';
 
@@ -132,5 +133,25 @@ INSERT INTO `liveroomoffer` (`room_id`, `offer_id`, `status`, `gmt_create`, `id`
   (1, 7, 0, '2016-08-01 01:01:03', 12),
   (2, 6, 0, '2016-08-01 02:02:02', 13),
   (2, 7, 0, '2016-08-01 03:03:00', 14);
+
+
+
+INSERT INTO `liveroom` (`room_id`, `user_id`, `city`, `name`, `portrait`, `online_users_count`, `url`, `title`, `cover`, `gmt_create`, `flow_status`) VALUES 
+  (1, 1, '杭州', '张三', '01.jpg', 1000, 'tzb.com', '张三房间', 'c01.jpg', '2016-08-01 00:10:10', 1),
+  (2, 2, '上海', '李四', '02.jpg', 999, 'tzb.com', '李四房间', 'ls01.jpg', '2016-08-06 03:03:03', 1),
+  (3, 3, '北京', '王五', '03.jpg', 777, 'tzb.com', '王五房间', 'ww01.jpg', '2016-08-03 02:03:03', 0);
+
+
+
+INSERT INTO `offer` (`offer_id`, `offer_status`, `sku_id`, `offer_name`, `offer_detail`, `offer_seller_id`, `offer_org_price`, `offer_pro_price`, `offer_qty`, `offer_tag`, `offer_attributes`, `gmt_create`, `gmt_modified`) VALUES 
+  (1, 1, 1, '衣服1', '无印良品1', 1, 100, 77, 100, '优质商品', '商品扩展属性1', '2016-08-01 01:01:01', '2016-08-03 01:01:01'),
+  (2, 1, 2, '衣服2', '无印良品2', 1, 200, 177, 200, '优质商品2', '商品扩展属性2', '2016-08-01 03:03:03', '2016-08-03'),
+  (3, 1, 3, '衣服3', '无印良品3', 2, 188, 116, 150, '优质商品3', '商品扩展属性3', '2016-08-03 01:01:01', '2016-08-03 10:10:01'),
+  (4, 1, 4, '鞋子1', '优质商品1', 2, 300, 99, 300, '酷炫鞋子', '商品扩展属性4', '2016-08-03 00:50:50', '2016-08-04 01:03:01'),
+  (5, 0, 5, '帽子', '时尚帽子', 3, 50, 33, 99, '精品', '精品', '2016-08-01 03:03:03', '2016-08-03'),
+  (6, 0, 6, '袜子', '袜子', 4, 55, 22, 323, '时尚袜子', '时尚', '2016-08-01 01:01:01', '2016-08-01 03:03:03'),
+  (7, 1, 7, '手套1', '精品手套', 5, 128, 77, 999, '手套', '冬季手套', '2016-08-01 03:03:03', '2016-08-06 05:05:05');
+
+
 
 

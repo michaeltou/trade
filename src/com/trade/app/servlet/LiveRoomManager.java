@@ -12,22 +12,24 @@ import net.sf.json.JSONObject;
 
 import com.chat.Message;
 import com.chat.MessageUtil;
+import com.trade.liveroom.LiveRoom;
+import com.trade.liveroom.LiveRoomUtil;
 
 /**
  * Servlet implementation class LiveRoomManager
  */
 public class LiveRoomManager extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private MessageUtil mUtil;
+	private LiveRoomUtil lrUtil;
 
     /**
      * Default constructor. 
      */
     public LiveRoomManager() {
         // TODO Auto-generated constructor stub
-    	mUtil = new MessageUtil();
+    	lrUtil = new LiveRoomUtil();
 		try {
-			mUtil.init("conf.xml");
+			lrUtil.init("conf.xml");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -54,9 +56,9 @@ public class LiveRoomManager extends HttpServlet {
 		try {
 			String sizeStr = request.getParameter("size");
 			int size = Integer.parseInt(sizeStr);
-			List<Message> messageList = mUtil.getMessageTop(size);
-			ResultModel<List<Message>> rm = new ResultModel<List<Message>>();
-			rm.setModel(messageList);
+			List<LiveRoom> liveroomList = lrUtil.getTopLiveRoomList(size);
+			ResultModel<List<LiveRoom>> rm = new ResultModel<List<LiveRoom>>();
+			rm.setModel(liveroomList);
 			rm.setSuccess(true);
 			String out = JSONObject.fromObject(rm).toString();
 			ServletOutUtil.output(response, out);

@@ -6,7 +6,7 @@ import java.util.List;
 public interface ILiveRoomOperation {
 	public LiveRoom getLiveRoomByRoomID(int roomID);
 	
-	public List<LiveRoom> getLiveRoomByOnLineUsersCount(int onLineUsersCount);
+	public List<LiveRoom> getTopLiveRoomList(int count);
 	
 	public List<LiveRoom> getLiveRoomByGmtCreate(String gmtCreate);
 	
