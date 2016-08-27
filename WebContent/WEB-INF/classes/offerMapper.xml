@@ -7,7 +7,7 @@
      <!-- 
          根据id查询得到一个user对象
      -->
-     <select id="getOfferById" parameterType="int" resultType="com.trade.offer.Offer">
+     <select id="getOfferById" parameterType="long" resultType="com.trade.offer.Offer">
          select * from offer where offer_id=#{offer_id}
      </select>
      <!-- 
@@ -20,7 +20,7 @@
          根据房间号拿到所有商品list
      -->
      <select id="getOfferByRoomid" parameterType="int" resultType="com.trade.offer.Offer">
-         select t1.* from liveroomoffer t1, offer t2 
+         select t2.* from liveroomoffer t1, offer t2 
          where t1.offer_id=t2.offer_id and t1.room_id = #{roomid} and t2.offer_id is not NULL
          	and t1.status=1
      </select>
@@ -38,5 +38,30 @@
      -->
      <update id="delOffer" parameterType="com.trade.offer.Offer">
          update offer set offer_status=1 where offer_id=#{offer_id}
+     </update>
+     
+     
+      <!-- 
+         根据商品id获取商品图片
+     -->
+     <select id="selectByOfferIdAndPictype" parameterType="com.trade.offer.OfferPicture" resultType="com.trade.offer.OfferPicture">
+         select * from offer_pictures where offer_id=#{offer_id} 
+         <if test="pic_type != -1">
+             and pic_type=#{pic_type}
+         </if>
+     </select>
+   
+     <!-- 
+         商品图片新增
+     -->
+     <insert id="addOfferPicture" parameterType="com.trade.offer.OfferPicture" useGeneratedKeys="true" keyProperty="pic_id">
+         insert into offer_pictures(offer_id,gmt_create,gmt_modified,url,status,desc,pic_type)
+         values(#{offer_id},now(),now(),#{url},#{status},#{desc},#{pic_type})
+     </insert>
+     <!-- 
+         商品图片删除
+     -->
+     <update id="deleteOfferPictureByOfferId" parameterType="long">
+         update offer_pictures set status=1 where offer_id=#{offer_id}
      </update>
  </mapper>

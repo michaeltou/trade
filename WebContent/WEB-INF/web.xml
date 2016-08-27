@@ -37,6 +37,40 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>OfferListManager</servlet-name>
-    <url-pattern>/liveroomofferlist</url-pattern>
+    <url-pattern>/offer/offerListQuery</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <description></description>
+    <display-name>OfferDetailManager</display-name>
+    <servlet-name>OfferDetailManager</servlet-name>
+    <servlet-class>com.trade.app.servlet.OfferDetailManager</servlet-class>
+  </servlet>
+   <servlet-mapping>
+    <servlet-name>OfferDetailManager</servlet-name>
+    <url-pattern>/offer/offerDetail</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <description></description>
+    <display-name>UserQuery</display-name>
+    <servlet-name>UserQuery</servlet-name>
+    <servlet-class>com.trade.app.servlet.UserQueryServlet</servlet-class>
+  </servlet>
+  
+    <servlet-mapping>
+    <servlet-name>UserQuery</servlet-name>
+    <url-pattern>/user/query</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>AddressQuery</display-name>
+    <servlet-name>AddressQuery</servlet-name>
+    <servlet-class>com.trade.app.servlet.AddressQueryServlet</servlet-class>
+  </servlet>
+  
+    <servlet-mapping>
+    <servlet-name>AddressQuery</servlet-name>
+    <url-pattern>/address/query</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -3,51 +3,51 @@
 <!-- 为这个mapper指定一个唯一的namespace，namespace的值习惯上设置成包名+sql映射文件名，这样就能够保证namespace的值是唯一的
 例如namespace="me.gacl.mapping.userMapper"就是me.gacl.mapping(包名)+userMapper(userMapper.xml文件去除后缀)
 -->
+
 <mapper namespace="com.trade.user.IUserOperation">
 <!-- 在select标签中编写查询的SQL语句， 设置select标签的id属性为getUser，id属性值必须是唯一的，不能够重复
      使用parameterType属性指明查询时使用的参数类型，resultType属性指明查询返回的结果集类型
      resultType="com.trade.conn.Dept"就表示将查询结果封装成一个Dept类的对象返回
      User类就是users表所对应的实体类
+     
+      <typeAliases> 
+    <typeAlias alias="User" type="com.trade.user.User" /> 
+ </typeAliases>
 -->
- 
+
     
-    <resultMap type="User" id="resultUser">
-        <id column="user_id" property="userId" />
-        <result column="user_name" property="userName" /> 
-    </resultMap>
-    
-   <resultMap type="User" id="resultUserList">
-        <id column="user_id" property="userId" />
-        <result column="user_name" property="userName" /> 
-    </resultMap>
-    
+    <sql id="fullComlumns"> user_id,user_name,user_password,user_level,user_tag,user_role,
+    gmt_create,gmt_modified </sql> 
     
     
      <!-- 
          根据id查询得到一个user对象
      -->
-     <select id="selectUserByID" parameterType="int" resultMap="resultUser">
-         select * from user where user_id=#{userId}
+     <select id="selectUserByID" parameterType="long" resultType="com.trade.user.User">
+         select <include refid="fullComlumns"/> 
+          from
+          user where user_id=#{user_id}
      </select>
      
-     <select id="selectUserList" parameterType="String" resultMap="resultUserList">
-         select * from user where user_name like  #{userName}
+     <select id="selectUserList" parameterType="String" resultType="com.trade.user.User">
+         select <include refid="fullComlumns"/>
+          from user where user_name like  #{user_name}
          
      </select>
      
      
-     <insert id="addUser" parameterType="User"  >
-        insert into user(user_id,user_name)    values(#{userId},#{userName}) 
+     <insert id="addUser" parameterType="com.trade.user.User"  >
+        insert into user(<include refid="fullComlumns"/> )  values
+        (#{user_id},#{user_name},#{user_password},#{user_level},#{user_tag},#{user_role},now(),now()) 
     </insert>
     
     
-    <update id="updateUser" parameterType="User" >
-        update user set user_name=#{userName}  where user_id=#{userId}
+    <update id="updateUser" parameterType="com.trade.user.User" >
     </update>
     
     
-    <delete id="deleteUser" parameterType="int">
-        delete from user where user_id=#{userId}
+    <delete id="deleteUser" parameterType="long">
+        delete from user where user_id=#{user_id}
     </delete>
     
      
