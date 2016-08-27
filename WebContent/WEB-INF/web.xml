@@ -21,13 +21,13 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>LiveRoomManager</display-name>
-    <servlet-name>LiveRoomManager</servlet-name>
-    <servlet-class>com.trade.app.servlet.LiveRoomManager</servlet-class>
+    <display-name>LiveRoomTopQuery</display-name>
+    <servlet-name>LiveRoomTopQuery</servlet-name>
+    <servlet-class>com.trade.app.servlet.LiveRoomListQueryServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>LiveRoomManager</servlet-name>
-    <url-pattern>/liveroomlist</url-pattern>
+    <servlet-name>LiveRoomTopQuery</servlet-name>
+    <url-pattern>/liveroomlist/query/top</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>

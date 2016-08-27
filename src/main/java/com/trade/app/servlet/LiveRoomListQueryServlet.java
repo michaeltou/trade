@@ -13,7 +13,6 @@ import net.sf.json.JSONObject;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.chat.Message;
 import com.trade.infrastructure.liveroom.LiveRoom;
 import com.trade.infrastructure.liveroom.LiveRoomOperator;
 

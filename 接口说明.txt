@@ -1,0 +1,41 @@
+
+功能：根据用户id和address_type查询地址信息
+服务端url:http://http://192.168.2.123/:8080/trade/address/query
+输入参数说明：user_id:用户id   address_type:地址类型，0（买家收货地址) 1(卖家发货地址) 2（卖家退货地址)
+示例:http://localhost:8080/trade/address/query?user_id=1&address_type=0
+返回值 
+{"success":true,"errorCode":"","model":[{"cover":"c01.jpg","gmt_create":"2016-08-01 00:10:10.0","room_id":1,"flow_status":"1","city":"杭州","user_id":1,"online_users_count":1000,"name":"张三","portrait":"01.jpg","title":"张三房间","url":"tzb.com"},{"cover":"ls01.jpg","gmt_create":"2016-08-06 03:03:03.0","room_id":2,"flow_status":"1","city":"上海","user_id":2,"online_users_count":999,"name":"李四","portrait":"02.jpg","title":"李四房间","url":"tzb.com"}],"errorMsg":""}
+
+
+
+功能：    获取最热门直播间List
+服务端url:http://192.168.2.123:8080/trade/liveroomlist/query/top?
+输入参数： count 需要获取的直播间数量
+示例：    http://192.168.2.123:8080/trade/liveroomlist/query/top?count=3
+返回：    {"success":true,"errorCode":"","model":[{"cover":"c01.jpg","gmt_create":"2016-08-01 00:10:10.0","room_id":1,"flow_status":"1","city":"杭州","user_id":1,"online_users_count":1000,"name":"张三","portrait":"01.jpg","title":"张三房间","url":"tzb.com"},{"cover":"ls01.jpg","gmt_create":"2016-08-06 03:03:03.0","room_id":2,"flow_status":"1","city":"上海","user_id":2,"online_users_count":999,"name":"李四","portrait":"02.jpg","title":"李四房间","url":"tzb.com"}],"errorMsg":""}
+
+功能：     根据商品id和图片类型获取商品信息及商品的图片信息
+服务端URL  ：http://192.168.2.123:8080/trade/offer/offerDetail
+输入参数   ：offer_id:商品id  pic_type:图片类型 -1（不取图片，0商品主图
+示例      ：http://192.168.2.123:8080/trade/offer/offerDetail?offer_id=1&pic_type=-1
+返回：
+{"success":true,"errorCode":"","model":{"offerDetail":{"gmt_create":"2016-08-01 01:01:01.0","sku_id":1,"gmt_modified":"2016-08-03 01:01:01.0","offer_id":1,"offer_name":"衣服1","offer_seller_id":1,"offer_attribute":"","offer_status":1,"offer_tag":"优质商品","offer_detail":"无印良品1","offer_org_price":100,"offer_pro_price":77,"offer_qty":100},"offerPictureList":[{"gmt_create":"2016-08-21 20:33:53.0","pic_status":0,"pic_id":1,"gmt_modified":"2016-08-21 20:33:53.0","pic_url":"http://192.168.2.123:8080/impages/1072006943.jpg","pic_desc":"image","pic_type":0,"offer_id":1},{"gmt_create":"2016-08-24 22:10:10.0","pic_status":0,"pic_id":2,"gmt_modified":"2016-08-24 22:10:10.0","pic_url":"http://192.168.2.123:8080/impages/49138510.jpg","pic_desc":"hello","pic_type":0,"offer_id":1}]},"errorMsg":""}
+
+
+功能      ：根据用户Id查询用户信息
+服务端url  :http://192.168.2.123:8080/trade/user/query
+输入参数：user_id用户Id
+示例      http://192.168.2.123:8080/trade/user/query?user_id=1
+返回
+{"success":true,"errorCode":"","model":{"gmt_create":{"date":6,"hours":16,"seconds":0,"month":6,"timezoneOffset":-480,"year":116,"minutes":0,"time":1467792000000,"day":3},"user_role":1,"user_password":"123456","user_tag":"白名单","user_id":1,"user_name":"张三","user_level":1,"gmt_modified":{"date":7,"hours":16,"seconds":0,"month":6,"timezoneOffset":-480,"year":116,"minutes":0,"time":1467878400000,"day":4}},"errorMsg":""}
+
+
+功能：    根据房间id查询商品信息
+服务端Url:http://192.168.2.123:8080/trade/offer/offerListQuery
+参数说明： roomid:房间号
+示例     : http://192.168.2.123:8080/trade/offer/offerListQuery?roomid=1
+返回       
+{"success":true,"errorCode":"","model":[{"gmt_create":"2016-08-01 01:01:01.0","sku_id":1,"gmt_modified":"2016-08-03 01:01:01.0","offer_id":1,"offer_name":"衣服1","offer_seller_id":1,"offer_attribute":"","offer_status":1,"offer_tag":"优质商品","offer_detail":"无印良品1","offer_org_price":100,"offer_pro_price":77,"offer_qty":100},{"gmt_create":"2016-08-01 03:03:03.0","sku_id":2,"gmt_modified":"2016-08-03 00:00:00.0","offer_id":2,"offer_name":"衣服2","offer_seller_id":1,"offer_attribute":"","offer_status":1,"offer_tag":"优质商品2","offer_detail":"无印良品2","offer_org_price":200,"offer_pro_price":177,"offer_qty":200},{"gmt_create":"2016-08-03 01:01:01.0","sku_id":3,"gmt_modified":"2016-08-03 10:10:01.0","offer_id":3,"offer_name":"衣服3","offer_seller_id":2,"offer_attribute":"","offer_status":1,"offer_tag":"优质商品3","offer_detail":"无印良品3","offer_org_price":188,"offer_pro_price":116,"offer_qty":150},{"gmt_create":"2016-08-03 00:50:50.0","sku_id":4,"gmt_modified":"2016-08-04 01:03:01.0","offer_id":4,"offer_name":"鞋子1","offer_seller_id":2,"offer_attribute":"","offer_status":1,"offer_tag":"酷炫鞋子","offer_detail":"优质商品1","offer_org_price":300,"offer_pro_price":99,"offer_qty":300},{"gmt_create":"2016-08-01 03:03:03.0","sku_id":5,"gmt_modified":"2016-08-03 00:00:00.0","offer_id":5,"offer_name":"帽子","offer_seller_id":3,"offer_attribute":"","offer_status":0,"offer_tag":"精品","offer_detail":"时尚帽子","offer_org_price":50,"offer_pro_price":33,"offer_qty":99}],"errorMsg":""}
+
+
+
