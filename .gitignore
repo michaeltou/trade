@@ -1,0 +1,8 @@
+target/
+build/
+.classpath
+.DS_Store
+.git/
+.externalToolBuilders/
+.project
+.settings/
