@@ -13,6 +13,7 @@ import net.sf.json.JSONObject;
 import com.chat.Message;
 import com.trade.infrastructure.chatMessage.MessageOperator;
 
+
 /**
  * Servlet implementation class LiveRoomManager
  */
@@ -27,7 +28,6 @@ public class LiveRoomManager extends HttpServlet {
      */
     public LiveRoomManager() {
         // TODO Auto-generated constructor stub
-    	
     }
 
 	/**
