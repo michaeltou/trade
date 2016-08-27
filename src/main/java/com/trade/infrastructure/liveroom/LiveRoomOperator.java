@@ -9,7 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import com.trade.infrastructure.MyBatisOperator;
 import com.trade.liveroom.ILiveRoomOperation;
 
-public class LiverRoomOperator extends MyBatisOperator{
+public class LiveRoomOperator extends MyBatisOperator{
 
 	
 	public LiveRoom getliveRoomByRoomID(int roomID) {
